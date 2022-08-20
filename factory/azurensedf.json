@@ -1,0 +1,9 @@
+{
+	"name": "azurensedf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2231729c-0d01-4583-b1c9-83edbc6b4470",
+		"tenantId": "d5925f95-15b6-478e-9e89-044d2e23e53e"
+	}
+}
