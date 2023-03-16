@@ -1,0 +1,248 @@
+{
+	"name": "copyfedbankdatafromblobtodb",
+	"properties": {
+		"description": "Copy fedbank data from blob to db",
+		"activities": [
+			{
+				"name": "Copy_qek",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "federalbanknsedata//"
+					},
+					{
+						"name": "Destination",
+						"value": "fedbankdata.AzureBlobStorageFile"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"wildcardFileName": "*",
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings",
+							"skipLineCount": 0
+						}
+					},
+					"sink": {
+						"type": "SqlServerSink",
+						"tableOption": "autoCreate"
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "fedbankblobdata",
+							"type": "LinkedServiceReference"
+						},
+						"path": "federalbanknsedata"
+					},
+					"logSettings": {
+						"enableCopyActivityLog": true,
+						"copyActivityLogSettings": {
+							"logLevel": "Info",
+							"enableReliableLogging": false
+						},
+						"logLocationSettings": {
+							"linkedServiceName": {
+								"referenceName": "fedbankblobdata",
+								"type": "LinkedServiceReference"
+							},
+							"path": "federalbanknsedata"
+						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Date ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Date ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "series ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "series ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OPEN ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OPEN ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "HIGH ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "HIGH ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "LOW ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "LOW ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "PREV. CLOSE ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "PREV. CLOSE ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ltp ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ltp ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "close ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "close ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "vwap ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "vwap ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "52W H ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "52W H ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "52W L ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "52W L ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VOLUME ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VOLUME ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "VALUE ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "VALUE ",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "No of trades ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "No of trades ",
+									"type": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_qek",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_qek",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
