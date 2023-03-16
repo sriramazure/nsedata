@@ -42,28 +42,7 @@
 						"type": "SqlServerSink",
 						"tableOption": "autoCreate"
 					},
-					"enableStaging": true,
-					"stagingSettings": {
-						"linkedServiceName": {
-							"referenceName": "fedbankblobdata",
-							"type": "LinkedServiceReference"
-						},
-						"path": "federalbanknsedata"
-					},
-					"logSettings": {
-						"enableCopyActivityLog": true,
-						"copyActivityLogSettings": {
-							"logLevel": "Info",
-							"enableReliableLogging": false
-						},
-						"logLocationSettings": {
-							"linkedServiceName": {
-								"referenceName": "fedbankblobdata",
-								"type": "LinkedServiceReference"
-							},
-							"path": "federalbanknsedata"
-						}
-					},
+					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
 						"mappings": [
