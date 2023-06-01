@@ -1,0 +1,10 @@
+C:\GitHub\nsedata\database\nsedata\nsedata\nsedata\bin\Debug\nsedata.dacpac
+C:\GitHub\nsedata\database\nsedata\nsedata\nsedata\bin\Debug\nsedata.dll
+C:\GitHub\nsedata\database\nsedata\nsedata\nsedata\bin\Debug\nsedata.pdb
+C:\GitHub\nsedata\database\nsedata\nsedata\nsedata\obj\Debug\nsedata.sqlproj.AssemblyReference.cache
+C:\GitHub\nsedata\database\nsedata\nsedata\nsedata\obj\Debug\Model.xml
+C:\GitHub\nsedata\database\nsedata\nsedata\nsedata\obj\Debug\refactor.xml
+C:\GitHub\nsedata\database\nsedata\nsedata\nsedata\obj\Debug\postdeploy.sql
+C:\GitHub\nsedata\database\nsedata\nsedata\nsedata\obj\Debug\predeploy.sql
+C:\GitHub\nsedata\database\nsedata\nsedata\nsedata\obj\Debug\nsedata.dll
+C:\GitHub\nsedata\database\nsedata\nsedata\nsedata\obj\Debug\nsedata.pdb

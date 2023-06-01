@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\database",
+    "\\database\\nsedata"
   ],
-  "SelectedNode": "\\C:\\GitHub\\nsedata",
+  "SelectedNode": "\\database\\nsedata",
   "PreviewInSolutionExplorer": false
 }
